@@ -1,0 +1,20 @@
+    <%= form_for(@user) do |f| %>
+		<%= render 'shared/error_messages',object: @user %>
+		
+		<%= f.label :用户名 %>
+		<%= f.text_field :name, class: 'form-control',value: "" %>
+		<%= f.text_field :id, class: 'form-control',value: params[:id] %>
+		<%= f.label :邮箱 %>
+		<%= f.email_field :email, class: 'form-control',value: "" %>
+
+		<%= f.label :密码 %>
+		<%= f.password_field :password, class: 'form-control' %>
+
+		<%= f.label :确认密码 %>
+		<%= f.password_field :password_confirmation, class: 'form-control' %>
+
+		<%= f.label :头像 %>
+		<%= f.file_field :cover,class: 'form-control' %>
+
+		<%= f.submit yield(:button_text), class: "btn btn-primary" %>
+	<% end %> 
